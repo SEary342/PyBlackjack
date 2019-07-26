@@ -29,6 +29,10 @@ def build_deck():
     return deck
 
 
+def _shuffle():
+    pass
+
+
 if __name__ == "__main__":
     deck = build_deck()
     print(deck)
