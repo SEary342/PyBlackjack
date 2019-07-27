@@ -1,6 +1,6 @@
 import unittest
 import copy
-from cards import Card, build_deck, shuffle
+from cards import Card, build_deck, _shuffle
 
 
 class Test_Card_Methods(unittest.TestCase):
@@ -50,5 +50,6 @@ class Test_Deck_Build_Methods(unittest.TestCase):
     def test_shuffle(self):
         local_deck = build_deck()
         orig_deck = copy.deepcopy(local_deck)
-        new_deck = shuffle(local_deck)
+        new_deck = _shuffle(local_deck)
         self.assertCountEqual(orig_deck, new_deck)
+        self.assertTrue(orig_deck != new_deck)
