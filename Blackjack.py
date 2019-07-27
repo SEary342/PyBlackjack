@@ -43,6 +43,10 @@ def main():
 
         print(f"Game Over! You {status}!")
         print(f"You have ${PLAYER.get_money()} remaining")
+        if PLAYER.get_money() == 0:
+            print("You ran out of money!")
+            print("Thanks for playing!")
+            break
 
         cont_game = ""
         while cont_game not in ("y", "n"):
