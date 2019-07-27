@@ -1,3 +1,5 @@
+import random
+
 SUITS = ("Hearts", "Diamonds", "Clubs", "Spades")
 RANKS = ("Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King")
 
@@ -26,11 +28,12 @@ def build_deck():
     for suit in SUITS:
         for rank in RANKS:
             deck.append(Card(rank, suit, RANK_VAL[rank]))
+    return shuffle(deck)
+
+
+def shuffle(deck):
+    random.shuffle(deck)
     return deck
-
-
-def _shuffle():
-    pass
 
 
 if __name__ == "__main__":
