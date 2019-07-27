@@ -1,4 +1,4 @@
-from Cards import build_deck, Card
+from cards import build_deck, Card
 
 GAME_DECK = []
 PLAYER_CARDS = []

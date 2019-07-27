@@ -22,6 +22,9 @@ class Card:
     def __str__(self):
         return f"{self.rank} of {self.suit}"
 
+    def __eq__(self, value):
+        return str(self) == str(value)
+
     @staticmethod
     def string_cards(card_list, exclude_first=False, print_value=True):
         card_string = ""
