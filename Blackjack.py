@@ -23,9 +23,9 @@ class Player:
 def main():
     global PLAYER
     PLAYER = Player(500)
-
+    print("Welcome to PyBlackjack!")
     while True:
-        print(f"You have ${PLAYER.get_money()}")
+        print(f"\nYou have ${PLAYER.get_money()}")
         bet = bet_request()
 
         win_loss = game()
@@ -41,8 +41,8 @@ def main():
         else:
             raise NotImplementedError
 
-        print(f"Game Over! You {status}!")
-        print(f"You have ${PLAYER.get_money()} remaining")
+        print(f"\nGame Over! You {status}!")
+        print(f"\nYou have ${PLAYER.get_money()} remaining")
         if PLAYER.get_money() == 0:
             print("You ran out of money!")
             print("Thanks for playing!")
@@ -50,7 +50,7 @@ def main():
 
         cont_game = ""
         while cont_game not in ("y", "n"):
-            cont_game = input(f"Play again? Y/N ").lower()
+            cont_game = input(f"\nPlay again? Y/N ").lower()
         if cont_game == "n":
             break
         elif cont_game == "y":
@@ -110,8 +110,8 @@ def initial_deal():
 
 def player_turn():
     while over_check(PLAYER_CARDS, 21):
-        print(f"Dealer shows: {Card.string_cards(DEALER_CARDS, True)}")
-        print(f"You have: {Card.string_cards(PLAYER_CARDS)}")
+        print(f"\nDealer shows: {Card.string_cards(DEALER_CARDS, True)}")
+        print(f"You have: {Card.string_cards(PLAYER_CARDS)}\n")
         hit_status = ""
         while hit_status not in ("y", "n"):
             hit_status = input(f"Hit? Y/N ").lower()
@@ -123,7 +123,7 @@ def player_turn():
 
 
 def dealer_turn(player_score: int):
-    print(f"Dealer shows: {Card.string_cards(DEALER_CARDS)}")
+    print(f"\nDealer shows: {Card.string_cards(DEALER_CARDS)}")
     min_score = 17
     if player_score < 17:
         min_score = player_score
